@@ -17,11 +17,16 @@ create: async(req: Request, res:Response)=>{
         .findOneBy({id: req.body.wilderId});
         console.log(wilderToAddRating);
     
-await dataSource.getRepository(Rating).save({
-    rating: req.body.rating,
-    skills: skillToAddRating,
-    wilders: wilderToAddRating
-});
+    if (skillToAddRating !== null && wilderToAddRating !== null ){
+        const newRating = new Rating();
+        newRating.rating = req.body.rating;
+        newRating.skill = skillToAddRating;
+        newRating.wilder = wilderToAddRating;
+        await dataSource.getRepository(Rating).save(newRating);
+    }
+    
+
+
 
 res.send("Rating added");
 

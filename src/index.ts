@@ -20,7 +20,7 @@ app.post("/api/wilder", wilderController.create);
 app.get("/api/wilder", wilderController.find);
 app.put("/api/wilder", wilderController.update);
 app.delete("/api/wilder", wilderController.delete);
-app.post("/api/wilder/addSkill", wilderController.addSkill);
+
 
 
 app.post("/api/skill", skillController.createSkill);
@@ -36,4 +36,4 @@ const start = async () :Promise<void> => {
   app.listen(5050, () => console.log("Server started on 5050"));
 }
 
-start();
+void start();

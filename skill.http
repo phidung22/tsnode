@@ -1,0 +1,29 @@
+POST http://localhost:5050/api/skill
+Content-Type: application/json
+
+{
+    "name": "Python"
+}
+
+###
+
+GET http://localhost:5050/api/skill
+
+###
+
+DELETE http://localhost:5050/api/skill
+Content-Type: application/json
+
+{
+    "idToDelete": 3
+}
+
+###
+
+PUT http://localhost:5050/api/skill
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "new name"
+}

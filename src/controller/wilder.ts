@@ -2,7 +2,7 @@
 import dataSource from "../utils";
 import { Request, Response } from "express";
 import {Wilder} from "../entity/wilder";
-import {Skill} from "../entity/skill";
+
 
 const wilderController = {
     create: (req: Request, res: Response) => {
@@ -52,26 +52,7 @@ const wilderController = {
                 res.send("Error while deleting Wilder");
             };
     },
-    addSkill: async (req: Request, res: Response) => {
-      console.log(req.body);
-  
-      const wilderToAddSkill = await dataSource
-        .getRepository(Wilder)
-        .findOneBy({ name: req.body.wilderName });
-      console.log(wilderToAddSkill);
-  
-      const skillToAddToWilder = await dataSource
-        .getRepository(Skill)
-        .findOneBy({ name: req.body.skillName });
-      console.log(skillToAddToWilder);
-  
-      if (wilderToAddSkill!==null){
-        wilderToAddSkill.skills.push(skillToAddToWilder);
-        await dataSource.getRepository(Wilder).save(wilderToAddSkill);
-      }
     
-      res.send("Skill added to wilder");
-    },
 };
 
 export default wilderController;

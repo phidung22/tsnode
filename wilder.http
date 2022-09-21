@@ -1,0 +1,42 @@
+POST http://localhost:5050/api/wilder
+Content-Type: application/json
+
+{
+    "name": "wider 3",
+    "description": "no 3"
+   
+}
+
+###
+
+GET http://localhost:5050/api/wilder
+
+###
+
+DELETE http://localhost:5050/api/wilder
+Content-Type: application/json
+
+{
+    "idToDelete": "1",
+}
+
+###
+
+PUT http://localhost:5050/api/wilder
+Content-Type: application/json
+
+{
+    "idToUpdate": 3,
+    "name": "new 3",
+    "description": "new description"
+}
+
+###
+
+POST http://localhost:5050/api/wilder/addSkill
+Content-Type: application/json
+
+{
+    "wilderName": "Phi Dung",
+    "skillName": "Javascript"
+}

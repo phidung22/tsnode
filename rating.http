@@ -1,0 +1,8 @@
+POST http://localhost:5050/api/rating
+Content-Type: application/json
+
+{
+    "wilderId": 1,
+    "skillId": 1,
+    "rating": 10
+}

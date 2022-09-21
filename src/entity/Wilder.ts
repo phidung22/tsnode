@@ -1,4 +1,7 @@
-import {Column, Entity, PrimaryGeneratedColumn, OneToMany, ManyToMany} from "typeorm";
+import {Column, Entity, PrimaryGeneratedColumn, OneToMany} from "typeorm";
+import { Rating } from "./rating";
+
+
 
 @Entity()
   export class Wilder {
@@ -11,10 +14,8 @@ name: string;
 @Column()
 description: string
 
-@OneToMany(() => Rating, (rating) => rating.wilder)
-    ratings: Rating[]
+@OneToMany(() => Rating, (rating) => rating.rating)
+    ratings: Rating[];
 
-@ManyToMany(() => Skill, (skill) => skill.skills)
-    skills: Skill[]
   }
  

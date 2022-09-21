@@ -1,4 +1,6 @@
 import {Column, Entity, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
+import { Skill } from "./skill";
+import {Wilder} from "./wilder"
 
 @Entity()
   export class Rating {
@@ -6,15 +8,13 @@ import {Column, Entity, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
 id: number;
 
 @Column()
-rating: string;
+rating: number;
 
-@Column()
-description: string
 
 @ManyToOne(() => Wilder, (wilder)=> wilder.ratings)
-    wilder: Wilder
+    wilder: Wilder;
 
-@ManyToOne(() => Skill, (skill)=> skill.ratings)
-    skill: Skill
+@ManyToOne(() => Skill, (skill)=> skill.name)
+    skill: Skill;
   }
  
